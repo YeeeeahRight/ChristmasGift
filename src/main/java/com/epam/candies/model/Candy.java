@@ -10,6 +10,10 @@ public class Candy {
         this.weight = weight;
     }
 
+    public String getName() {
+        return name;
+    }
+
     public double getWeight() {
         return weight;
     }
