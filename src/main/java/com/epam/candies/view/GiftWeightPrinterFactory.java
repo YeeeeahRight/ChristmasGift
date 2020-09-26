@@ -1,7 +1,7 @@
-package com.epam.gifts.view;
+package com.epam.candies.view;
 
-import com.epam.gifts.enums.PrinterType;
-import com.epam.gifts.exceptions.UnknownPrinterTypeException;
+import com.epam.candies.enums.PrinterType;
+import com.epam.candies.exceptions.UnknownPrinterTypeException;
 
 public class GiftWeightPrinterFactory {
 

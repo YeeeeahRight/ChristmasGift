@@ -1,39 +1,40 @@
-package com.epam.gifts.logic;
+package com.epam.candies.logic;
 
-import com.epam.gifts.exceptions.NullGiftException;
-import com.epam.gifts.model.Candy;
-import com.epam.gifts.model.KidGift;
+import com.epam.candies.exceptions.NullGiftException;
+import com.epam.candies.model.Candy;
+import com.epam.candies.model.KidGift;
 import org.junit.Assert;
 import org.junit.Test;
 
 public class CandyCalculatorTest {
     private CandyCalculator candyCalculator = new CandyCalculator();
     KidGift kidGift;
+    private static final double DELTA = 0.01;
 
     @Test
     public void testFindGiftWeightWhenOnlyOneCandy() throws NullGiftException {
         kidGift = new KidGift();
         kidGift.fillGift(new Candy("Truffle", 20));
-        int giftWeight = candyCalculator.findGiftWeight(kidGift);
-        Assert.assertEquals(20, giftWeight);
+        double giftWeight = candyCalculator.findGiftWeight(kidGift);
+        Assert.assertEquals(20, giftWeight, DELTA);
     }
 
     @Test
     public void testFindGiftWeightWhenLotOfCandies() throws NullGiftException {
         kidGift = new KidGift();
-        kidGift.fillGift(new Candy("Truffle", 20));
+        kidGift.fillGift(new Candy("Truffle", 20.5));
         kidGift.fillGift(new Candy("Chocolate santa", 10));
         kidGift.fillGift(new Candy("Toffee", 50));
         kidGift.fillGift(new Candy("M&M'S", 35));
-        int giftWeight = candyCalculator.findGiftWeight(kidGift);
-        Assert.assertEquals(115, giftWeight);
+        double giftWeight = candyCalculator.findGiftWeight(kidGift);
+        Assert.assertEquals(115.5, giftWeight, DELTA);
     }
 
     @Test
     public void testFindGiftWeightWhenNoCandies() throws NullGiftException {
         kidGift = new KidGift();
-        int giftWeight = candyCalculator.findGiftWeight(kidGift);
-        Assert.assertEquals(0, giftWeight);
+        double giftWeight = candyCalculator.findGiftWeight(kidGift);
+        Assert.assertEquals(0, giftWeight, DELTA);
     }
 
     @Test(expected = NullGiftException.class)

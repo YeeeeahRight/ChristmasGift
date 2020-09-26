@@ -1,23 +1,23 @@
-package com.epam.gifts;
+package com.epam.candies;
 
-import com.epam.gifts.enums.PrinterType;
-import com.epam.gifts.exceptions.NullGiftException;
-import com.epam.gifts.exceptions.UnknownPrinterTypeException;
-import com.epam.gifts.logic.CandyCalculator;
-import com.epam.gifts.model.Candy;
-import com.epam.gifts.model.KidGift;
-import com.epam.gifts.view.GiftWeightPrinter;
-import com.epam.gifts.view.GiftWeightPrinterFactory;
+import com.epam.candies.enums.PrinterType;
+import com.epam.candies.exceptions.NullGiftException;
+import com.epam.candies.exceptions.UnknownPrinterTypeException;
+import com.epam.candies.logic.CandyCalculator;
+import com.epam.candies.model.Candy;
+import com.epam.candies.model.KidGift;
+import com.epam.candies.view.GiftWeightPrinter;
+import com.epam.candies.view.GiftWeightPrinterFactory;
 
 public class Main {
     public static void main(String[] args) throws UnknownPrinterTypeException, NullGiftException {
         Candy firstCandy = new Candy("Truffle", 50);
-        Candy secondCandy = new Candy("Chocolate santa", 20);
+        Candy secondCandy = new Candy("Chocolate santa", 20.5);
         Candy thirdCandy = new Candy("Toffee", 70);
         KidGift kidGift = new KidGift();
         kidGift.fillGift(firstCandy, secondCandy, thirdCandy);
         CandyCalculator candyCalculator = new CandyCalculator();
-        int giftWeight = candyCalculator.findGiftWeight(kidGift);
+        double giftWeight = candyCalculator.findGiftWeight(kidGift);
         GiftWeightPrinterFactory giftWeightPrinterCreator = new GiftWeightPrinterFactory();
         PrinterType printerType = PrinterType.CONSOLE;
         GiftWeightPrinter giftWeightPrinter = giftWeightPrinterCreator.createGiftWeightPrinter(printerType);

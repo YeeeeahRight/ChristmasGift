@@ -1,4 +1,4 @@
-package com.epam.gifts.model;
+package com.epam.candies.model;
 
 import java.util.ArrayList;
 import java.util.Collections;
