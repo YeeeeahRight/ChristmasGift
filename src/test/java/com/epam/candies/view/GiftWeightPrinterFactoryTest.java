@@ -6,12 +6,16 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class GiftWeightPrinterFactoryTest {
+    //given
     private GiftWeightPrinterFactory giftWeightPrinterCreator = new GiftWeightPrinterFactory();
 
     @Test
     public void testCreateGiftWeightPrinterWhenPrinterTypeIsConsole() throws UnknownPrinterTypeException {
+        //given
         PrinterType printerType = PrinterType.CONSOLE;
+        //when
         GiftWeightPrinter giftWeightPrinter = giftWeightPrinterCreator.createGiftWeightPrinter(printerType);
+        //then
         Assert.assertTrue(giftWeightPrinter instanceof ConsoleGiftWeightPrinter);
     }
 
