@@ -13,7 +13,7 @@ public class CandyCalculatorTest {
     @Test
     public void testFindGiftWeightWhenOnlyOneCandy() throws NullGiftException {
         kidGift = new KidGift();
-        kidGift.fillGift(new Candy("candy1", 20));
+        kidGift.fillGift(new Candy("Truffle", 20));
         int giftWeight = candyCalculator.findGiftWeight(kidGift);
         Assert.assertEquals(20, giftWeight);
     }
@@ -21,10 +21,10 @@ public class CandyCalculatorTest {
     @Test
     public void testFindGiftWeightWhenLotOfCandies() throws NullGiftException {
         kidGift = new KidGift();
-        kidGift.fillGift(new Candy("candy1", 20));
-        kidGift.fillGift(new Candy("candy2", 10));
-        kidGift.fillGift(new Candy("candy3", 50));
-        kidGift.fillGift(new Candy("candy4", 35));
+        kidGift.fillGift(new Candy("Truffle", 20));
+        kidGift.fillGift(new Candy("Chocolate santa", 10));
+        kidGift.fillGift(new Candy("Toffee", 50));
+        kidGift.fillGift(new Candy("M&M'S", 35));
         int giftWeight = candyCalculator.findGiftWeight(kidGift);
         Assert.assertEquals(115, giftWeight);
     }

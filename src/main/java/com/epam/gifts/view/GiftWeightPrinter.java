@@ -1,5 +1,5 @@
 package com.epam.gifts.view;
 
 public interface GiftWeightPrinter {
-    void print(int totalWeight);
+    void print(int giftWeight);
 }

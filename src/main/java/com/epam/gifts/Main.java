@@ -11,9 +11,9 @@ import com.epam.gifts.view.GiftWeightPrinterFactory;
 
 public class Main {
     public static void main(String[] args) throws UnknownPrinterTypeException, NullGiftException {
-        Candy firstCandy = new Candy("candy1", 50);
-        Candy secondCandy = new Candy("candy2", 20);
-        Candy thirdCandy = new Candy("candy3", 70);
+        Candy firstCandy = new Candy("Truffle", 50);
+        Candy secondCandy = new Candy("Chocolate santa", 20);
+        Candy thirdCandy = new Candy("Toffee", 70);
         KidGift kidGift = new KidGift();
         kidGift.fillGift(firstCandy, secondCandy, thirdCandy);
         CandyCalculator candyCalculator = new CandyCalculator();
