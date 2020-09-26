@@ -1,5 +1,6 @@
 package com.epam.candies;
 
+import com.epam.candies.data.KidGiftCreator;
 import com.epam.candies.enums.PrinterType;
 import com.epam.candies.exceptions.NullGiftException;
 import com.epam.candies.exceptions.UnknownPrinterTypeException;
@@ -9,13 +10,14 @@ import com.epam.candies.model.KidGift;
 import com.epam.candies.view.GiftWeightPrinter;
 import com.epam.candies.view.GiftWeightPrinterFactory;
 
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) throws UnknownPrinterTypeException, NullGiftException {
-        Candy firstCandy = new Candy("Truffle", 50);
-        Candy secondCandy = new Candy("Chocolate santa", 20.5);
-        Candy thirdCandy = new Candy("Toffee", 70);
+        KidGiftCreator kidGiftCreator = new KidGiftCreator();
+        ArrayList<Candy> candies = kidGiftCreator.createGift();
         KidGift kidGift = new KidGift();
-        kidGift.fillGift(firstCandy, secondCandy, thirdCandy);
+        kidGift.fillGift(candies);
         CandyCalculator candyCalculator = new CandyCalculator();
         double giftWeight = candyCalculator.findGiftWeight(kidGift);
         GiftWeightPrinterFactory giftWeightPrinterCreator = new GiftWeightPrinterFactory();
