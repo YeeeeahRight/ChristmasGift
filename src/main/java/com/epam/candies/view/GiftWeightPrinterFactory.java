@@ -8,9 +8,11 @@ public class GiftWeightPrinterFactory {
     private final static String UNKNOWN_PRINTER_TYPE_MESSAGE = "Unknown printer type for your gift weight.";
 
     public GiftWeightPrinter createGiftWeightPrinter(PrinterType printerType) throws UnknownPrinterTypeException {
-        if (printerType == PrinterType.CONSOLE) {
-            return new ConsoleGiftWeightPrinter();
+        switch (printerType) {
+            case CONSOLE:
+                return new ConsoleGiftWeightPrinter();
+            default:
+                throw new UnknownPrinterTypeException(UNKNOWN_PRINTER_TYPE_MESSAGE);
         }
-        throw new UnknownPrinterTypeException(UNKNOWN_PRINTER_TYPE_MESSAGE);
     }
 }
